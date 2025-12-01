@@ -16,11 +16,9 @@ public class Collatz {
             boolean startedAtOne = (x == 1);
 
             if (verbose) {
-                // מדפיסים את הרצף
                 while (true) {
                     System.out.print(x + ( (startedAtOne && x == 1 && count > 0) ? "" : " "));
                     count++;
-                    // תנאי עצירה: אם התחלנו ב-1, רוצים להגיע שוב ל-1; אחרת – עד הפעם הראשונה שמגיעים ל-1
                     if ((!startedAtOne && x == 1) || (startedAtOne && x == 1 && count > 1)) {
                         System.out.println("(" + count + ")");
                         break;
@@ -28,7 +26,6 @@ public class Collatz {
                     x = next(x);
                 }
             } else {
-                // מצב תמציתי: לא מדפיסים את המספרים, רק בודקים הגעה ל-1
                 while (true) {
                     count++;
                     if ((!startedAtOne && x == 1) || (startedAtOne && x == 1 && count > 1)) {
@@ -42,3 +39,4 @@ public class Collatz {
         System.out.println("Every one of the first " + N + " hailstone sequences reached 1.");
     }
 }
+
